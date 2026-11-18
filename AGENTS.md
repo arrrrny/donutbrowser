@@ -1,3 +1,19 @@
+<!-- fleet-agents-pointer:begin -->
+# ⚠️ FLEET RULES — LOAD ~/.agents/AGENTS.md FIRST
+
+Before applying any rule in this file, load and follow `~/.agents/AGENTS.md`
+— the fleet-level rules file every machine carries (synced from
+`arrrrny/skills`, the single source of truth, by `sync-skills` inside
+`kimi-code-update`, 3x/day). It owns the fleet-wide HARD RULES: the
+skills-sync rule (every merge-PR task must check the repo's exposed skills —
+create or update them on exported-behavior changes — and auto-PR them to
+`arrrrny/skills`), the English-only response rule, the GitHub account
+spelling (`arrrrny` = a + exactly 4 r's + ny), and the machine bootstrap
+contract (`arrrrny/scripts` + `arrrrny/skills`). Future fleet-wide rule
+changes are made ONCE in that file — never by editing every repo. Where this
+file and the fleet file disagree, the fleet file wins unless this file is
+MORE restrictive for this repo.
+<!-- fleet-agents-pointer:end -->
 # ABSOLUTE GIT RULE: READ FIRST (2026-06-11)
 
 NEVER run any git command that modifies git history OR the working tree, in ANY repo, unless the user EXPLICITLY authorizes that exact command. Forbidden without per-command authorization: `commit`, `revert`, `cherry-pick`, `restore`, `checkout` (files/branches), `reset`, `rebase`, `merge`, `stash`, `clean`, `apply`, `add`, `rm`, `push`, any force op. Only read-only git (`status`, `log`, `show`, `diff`, `ls-files`, `rev-parse`) is allowed without asking. Authorization is per-command: 1 explicit authorization = exactly 1 command. If a git mutation seems needed, STOP and ask for that one command.
